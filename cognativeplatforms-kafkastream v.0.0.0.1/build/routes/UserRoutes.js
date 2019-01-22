@@ -34,14 +34,14 @@ class UserRouter {
     }
     createUser(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            // const check = this.datalib.read('users',req.body.email);
-            console.log(this.datalib);
-            // const newUser = new User(req.body);
-            // newUser.save().then((doc)=>{
-            //     console.log(doc);
-            // }).catch((err)=>{
-            //     console.log(err);
-            // });   
+            //const check = this.datalib.read('users',req.body.email);
+            //console.log(this.datalib);
+            const newUser = new User_1.default(req.body);
+            newUser.save().then((doc) => {
+                res.json({ flag: true, data: doc });
+            }).catch((err) => {
+                res.json({ flag: false, err: err.message });
+            });
         });
     }
     updateUser(req, res) {

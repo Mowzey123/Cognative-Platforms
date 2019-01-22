@@ -49,4 +49,10 @@ function maketopic(topic, producer) {
         producers[producer].send("1", new Buffer(topic));
     }).catch((err) => console.error(err));
 }
-exports.default = maketopic;
+exports.maketopic = maketopic;
+function sendMessage(producer, key, topic, msg, config) {
+    const obj = new kafkaProducer();
+    obj.createMessage(producer, key, topic, msg, new kafka_typescript_1.ProducerConfig(config.host, config.port));
+}
+exports.sendMessage = sendMessage;
+//export default maketopic; 

@@ -9,12 +9,8 @@ class IndexRoutes {
     getIndex(req, res) {
         res.json({ "Api": " /api/posts" });
     }
-    createTopic(req, res) {
-        res.json({ "api": "message" });
-    }
     routes() {
         this.router.get('/', this.getIndex);
-        this.router.get('/createTopic', this.getIndex);
     }
 }
 const indexRoutes = new IndexRoutes();

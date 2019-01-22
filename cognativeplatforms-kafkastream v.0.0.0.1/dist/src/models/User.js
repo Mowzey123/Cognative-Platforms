@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const mongoose_1 = require("mongoose");
-const UserSchema = new mongoose_1.Schema({
+var mongoose_1 = require("mongoose");
+var UserSchema = new mongoose_1.Schema({
     name: { type: String, required: true },
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true, },
@@ -18,7 +18,8 @@ var ErrorHanlder = function (error, doc, next) {
     }
 };
 UserSchema.post('save', ErrorHanlder);
-UserSchema.post('update', ErrorHanlder);
-UserSchema.post('findOneAndUpdate', ErrorHanlder);
-UserSchema.post('insertMany', ErrorHanlder);
+//   UserSchema.post('update', ErrorHanlder);
+//   UserSchema.post('findOneAndUpdate', ErrorHanlder);
+//   UserSchema.post('insertMany', ErrorHanlder);
 exports.default = mongoose_1.model('User', UserSchema);
+//# sourceMappingURL=User.js.map

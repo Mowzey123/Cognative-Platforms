@@ -17,3 +17,8 @@ class kafkaConsumer{
     }
   
   }
+
+  export function createConsumer(){
+    const consumerobj = new kafkaConsumer("localhost","9091","Congative-Consumer");
+    consumerobj.createConsumer(["hehe"]); 
+  }

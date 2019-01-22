@@ -18,7 +18,7 @@ var ErrorHanlder =  function(error, doc, next) {
   };
   
   UserSchema.post('save', ErrorHanlder);
-//   UserSchema.post('update', ErrorHanlder);
-//   UserSchema.post('findOneAndUpdate', ErrorHanlder);
-//   UserSchema.post('insertMany', ErrorHanlder);
+  UserSchema.post('update', ErrorHanlder);
+  UserSchema.post('findOneAndUpdate', ErrorHanlder);
+  UserSchema.post('insertMany', ErrorHanlder);
 export default model('User', UserSchema);

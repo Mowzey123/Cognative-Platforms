@@ -1,14 +1,18 @@
 import express from 'express';
-import mongoose from 'mongoose';
 import morgan from 'morgan';
 import helmet from 'helmet';
 import compression from 'compression';
 import cors from 'cors';
+import * as config from './config/config';
 
 // import routes
 import indexRoutes from './routes/indexRoutes';
 import UserRoutes from './routes/UserRoutes';
-import maketopic from './lib/kafka/kafkaProducer';
+import streamingRoutes from './routes/streamingRoutes'
+//kafka stream libs
+//import * as kafkaproducer from './lib/kafka/kafkaproducer';
+//import * as kafkaConsumer from './lib/kafka/kafkaConsumer';
+
 // Server Class
 class Server {
     public app: express.Application;
@@ -20,14 +24,9 @@ class Server {
     }
 
     public config(): void {
-        const MONGO_URI = 'mongodb://localhost/restapits';
-        mongoose.set('useFindAndModify', false);
-        mongoose.connect(MONGO_URI || process.env.MONGODB_URL, {
-            useNewUrlParser: true,
-            useCreateIndex: true
-        });
+       
         // Settings
-        this.app.set('port', process.env.PORT || 4000);
+        this.app.set('port', config.PORT || 4000);
         // middlewares
         this.app.use(morgan('dev'));
         this.app.use(express.json());
@@ -37,16 +36,23 @@ class Server {
         this.app.use(cors());
     }
 
+    //adding imported routes to middleware
     public routes(): void {
         const router: express.Router = express.Router();
         this.app.use('/', indexRoutes);
-        this.app.use('/api/users', UserRoutes);
+        this.app.use('/users', UserRoutes);
+        this.app.use('/kafka', streamingRoutes);
     }
 
+    //start running server on port
     public start(): void {
         this.app.listen(this.app.get('port'), () => {
-            console.log('Server is listenning on port', this.app.get('port'));
-            maketopic("hehe","Cognative");
+            console.log('Server is listening on port', this.app.get('port'));
+            
+            //kafkaproducer.maketopic("hehe","Cognative");
+            //const msg = new Buffer("Message testing Assiat");
+            //configuration to be changed depending on the enviroment
+            //kafkaproducer.sendMessage("Cognative",1,"hehe",msg,{"host":"localhost","port":9092});
         });
     }
 }

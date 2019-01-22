@@ -12,7 +12,6 @@ const cors_1 = __importDefault(require("cors"));
 // import routes
 const indexRoutes_1 = __importDefault(require("./routes/indexRoutes"));
 const UserRoutes_1 = __importDefault(require("./routes/UserRoutes"));
-const kafkaProducer_1 = __importDefault(require("./lib/kafka/kafkaProducer"));
 // Server Class
 class Server {
     constructor() {
@@ -21,6 +20,7 @@ class Server {
         this.routes();
     }
     config() {
+        //configuaration t be moved some where else
         const MONGO_URI = 'mongodb://localhost/restapits';
         mongoose_1.default.set('useFindAndModify', false);
         mongoose_1.default.connect(MONGO_URI || process.env.MONGODB_URL, {
@@ -37,15 +37,20 @@ class Server {
         this.app.use(compression_1.default());
         this.app.use(cors_1.default());
     }
+    //adding imported routes to middleware
     routes() {
         const router = express_1.default.Router();
         this.app.use('/', indexRoutes_1.default);
-        this.app.use('/api/users', UserRoutes_1.default);
+        this.app.use('/users', UserRoutes_1.default);
     }
+    //start running server on port
     start() {
         this.app.listen(this.app.get('port'), () => {
             console.log('Server is listenning on port', this.app.get('port'));
-            kafkaProducer_1.default("hehe", "Cognative");
+            //kafkaproducer.maketopic("hehe","Cognative");
+            //const msg = new Buffer("Message testing Assiat");
+            //configuration to be changed depending on the enviroment
+            //kafkaproducer.sendMessage("Cognative",1,"hehe",msg,{"host":"localhost","port":9092});
         });
     }
 }

@@ -1,14 +1,13 @@
-import { Data } from './../lib/data';
 import { Request, Response, NextFunction, Router } from 'express';
+require('../config/mongodb.connect');
 import User from '../models/User';
-import assert from 'assert';
+import {Data} from '../lib/data';
 
 class UserRouter {
     router: Router;
-    datalib:Data;
+    
     constructor() {
         this.router = Router();
-        this.datalib = new Data();
         this.routes();
     }
 
@@ -23,14 +22,23 @@ class UserRouter {
     }
 
     async createUser(req: Request, res: Response): Promise<void> {
-        // const check = this.datalib.read('users',req.body.email);
-        console.log(this.datalib);
-        // const newUser = new User(req.body);
-        // newUser.save().then((doc)=>{
-        //     console.log(doc);
-        // }).catch((err)=>{
-        //     console.log(err);
-        // });   
+         const newUser = new User(req.body);
+         newUser.save().then((doc)=>{
+             res.json({flag:true,data:doc});
+         }).catch((err)=>{
+             if(err.code){
+                 
+                const datalib = new Data();
+                if(err.code=='11000'){
+                    res.json({flag:false,err:"Email address is already in use"});
+                    console.log(datalib.update("logs/","usercreation-err-logs",{flag:false,err:"Email address is already in use",email:req.body.email,date:new Date()}));
+                }else{
+                    res.json({flag:false,err:err.error.message});
+                }
+             }else{
+                res.json({flag:false,err:err.error.message});
+             }
+         });   
     }
 
     async updateUser(req: Request, res: Response): Promise<void> {
