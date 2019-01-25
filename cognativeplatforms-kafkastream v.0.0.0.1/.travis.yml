@@ -1,2 +1,21 @@
-sudo: required
-language: node_js
+language: nodejs
+
+before_script:
+  - npm run setup
+  - npm run build
+
+script:
+  - npm run test-only
+
+after_success:
+  - npm run typedoc
+  - npm pack
+
+deploy:
+- provider: releases
+    api_key: "5211f28a9117462aace31f50f303e3c0a0076754"
+    file_glob: true
+    #file: "{YOURLIB}-*.tgz"
+    skip_cleanup: true
+    on:
+      tags: true
