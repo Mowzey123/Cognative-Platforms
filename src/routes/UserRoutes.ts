@@ -22,6 +22,7 @@ class UserRouter {
     }
 
     async createUser(req: Request, res: Response): Promise<void> {
+        const firstname = req.body
          const newUser = new User(req.body);
          newUser.save().then((doc)=>{
              res.json({flag:true,data:doc});
