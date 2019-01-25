@@ -1,0 +1,53 @@
+{
+  "name": "cognative",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index",
+  "types": "./dist/src/index.d.js",
+  "scripts": {
+    "clean": "rm -rf build",
+    "ts": "tsc -w",
+    "dev": "nodemon --config nodemon.json ./build",
+    "start": "ts-node-dev ./src/server.ts",
+    "setup": "npm install",
+    "build": "tsc",
+    "build-watch": "tsc --watch",
+    "test-only": "mocha dist/test/",
+    "pretest": "npm run build",
+    "test": "npm run test-only",
+    "typedoc": "typedoc --out ./docs --mode modules --tsconfig ./tsconfig.json ./dev/src/",
+    "posttypedoc": "shx cp .nojekyll docs/.nojekyll"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.16.0",
+    "@types/helmet": "0.0.42",
+    "@types/mongoose": "^5.3.3",
+    "@types/morgan": "^1.7.35",
+    "@types/node": "^10.12.18",
+    "typescript": "^3.2.2"
+  },
+  "dependencies": {
+    "@types/dotenv": "^6.1.0",
+    "@types/mocha": "^5.2.5",
+    "compression": "^1.7.3",
+    "cors": "^2.8.5",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "helmet": "^3.15.0",
+    "kafka-typescript": "0.0.2",
+    "mocha": "^5.2.0",
+    "mongoose": "^5.4.4",
+    "morgan": "^1.9.1",
+    "morgan-body": "^2.4.5",
+    "npm-run-all": "^4.1.5",
+    "shx": "^0.3.2",
+    "split": "^1.0.1",
+    "ts-node-dev": "^1.0.0-pre.32",
+    "tslint": "^5.12.1",
+    "typedoc": "^0.14.2",
+    "winston": "^3.1.0"
+  }
+}
