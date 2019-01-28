@@ -5,7 +5,6 @@ import cors from 'cors';
 import * as config from './config/config';
 import bodyParser from 'body-parser';
 import {Logger} from './lib/logger';
-
 // Routes
 import indexRoutes from './routes/indexRoutes';
 import UserRoutes from './routes/UserRoutes';
@@ -27,12 +26,13 @@ class Server {
         // Server Settings and middleware
         this.app.set('port', config.PORT || 4000); 
         this.app.use(bodyParser.json());
-        this.logger=new Logger(this.app);
         this.app.use(express.json());
         this.app.use(express.urlencoded({extended: false}));
         this.app.use(helmet());
         this.app.use(compression());
         this.app.use(cors());
+        this.logger=new Logger(this.app);
+        
     }
 
     public routes(): void {
