@@ -13,3 +13,24 @@ script:
 after_success:
   - npm run typedoc
   - npm pack
+deploy:
+  - provider: pages
+    skip_cleanup: true
+    local_dir: docs/
+    github_token: "0195e32c26abc01dc08b568a84648416862ab4f8"
+    on:
+      tags: true
+  - provider: releases
+    api_key: "0195e32c26abc01dc08b568a84648416862ab4f8"
+    file_glob: true
+    file: "{YOURLIB}-*.tgz"
+    skip_cleanup: true
+    on:
+      tags: true
+  - provider: npm
+    skip_cleanup: true
+    email: "molutalo@gmail.com"
+    api_key: "1d0df3bd-6c7e-4b09-a9ca-5b24195d655d"
+    on:
+      tags: true
+

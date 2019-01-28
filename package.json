@@ -12,7 +12,7 @@
     "setup": "npm install",
     "build": "tsc",
     "build-watch": "tsc --watch",
-    "test-only": "mocha dist/test/",
+    "test-only": "mocha dist/",
     "pretest": "npm run build",
     "test": "npm run test-only",
     "typedoc": "typedoc --out ./docs --mode modules --tsconfig ./tsconfig.json ./dev/src/",
