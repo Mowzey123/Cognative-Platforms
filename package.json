@@ -12,9 +12,9 @@
     "setup": "npm install",
     "build": "tsc",
     "build-watch": "tsc --watch",
-    "test-only": "ts-node-dev ./src/server.ts",
+    "test-only": "mocha dist/",
     "pretest": "npm run build",
-    "test": "npm run test-only",
+    "test": "npm run ./dist/server.js",
     "typedoc": "typedoc --out ./docs --mode modules --tsconfig ./tsconfig.json ./src/",
     "posttypedoc": "shx cp .nojekyll docs/.nojekyll"
   },
