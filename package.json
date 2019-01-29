@@ -15,10 +15,14 @@
     "test-only": "mocha dist/",
     "pretest": "npm run build",
     "test": "npm run test-only",
-    "typedoc": "typedoc --out ./docs --mode modules --tsconfig ./tsconfig.json ./dev/src/",
+    "typedoc": "typedoc --out ./docs --mode modules --tsconfig ./tsconfig.json ./src/",
     "posttypedoc": "shx cp .nojekyll docs/.nojekyll"
   },
   "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mowzey123/Cognative-Platforms.git"
+  },
   "author": "",
   "license": "ISC",
   "devDependencies": {
@@ -29,17 +33,22 @@
     "@types/mongoose": "^5.3.3",
     "@types/morgan": "^1.7.35",
     "@types/node": "^10.12.18",
+    "gulp-concat": "^2.6.1",
+    "gulp-tslint": "^8.1.3",
+    "node-sass": "^4.11.0",
     "typescript": "^3.2.2"
   },
   "dependencies": {
     "@types/dotenv": "^6.1.0",
     "@types/mocha": "^5.2.5",
-    "compression": "^1.7.3",
     "chai": "^4.1.2",
+    "compression": "^1.7.3",
     "cors": "^2.8.5",
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "express-request-id": "^1.4.1",
+    "gulp": "^4.0.0",
+    "gulp-typescript": "^5.0.0",
     "helmet": "^3.15.0",
     "kafka-typescript": "0.0.2",
     "mocha": "^5.2.0",
@@ -49,6 +58,7 @@
     "npm-run-all": "^4.1.5",
     "shx": "^0.3.2",
     "split": "^1.0.1",
+    "systemjs": "^3.0.0",
     "ts-node-dev": "^1.0.0-pre.32",
     "tslint": "^5.12.1",
     "typedoc": "^0.14.2",

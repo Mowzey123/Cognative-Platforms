@@ -8,11 +8,12 @@ before_script:
   - npm run build
 
 script:
-  - npm run test-only
+  - npm run start
 
 after_success:
   - npm run typedoc
   - npm pack
+
 deploy:
   - provider: pages
     skip_cleanup: true
