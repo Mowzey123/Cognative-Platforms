@@ -58,3 +58,17 @@
 [97m	}[0m
 [97m][0m
 [96mResponse: [32m200 [37m78.772 ms - 332[0m
+[96mRequest: [93mGET [97m/ [90mat [37mTue Jan 29 2019 15:24:40 GMT+0300, [90mUser Agent: node-superagent/3.8.3[0m
+[95mResponse Body:[0m
+[97m{[0m
+[97m	"Api": " /api/posts"[0m
+[97m}[0m
+[96mResponse: [32m200 [37m11.125 ms - 21[0m
+[96mRequest: [93mGET [97m/ [90mat [37mTue Jan 29 2019 15:27:17 GMT+0300, [90mUser Agent: node-superagent/3.8.3[0m
+[95mResponse Body:[0m
+[97m /api/posts[0m
+[96mResponse: [32m200 [37m12.994 ms - 13[0m
+[96mRequest: [93mGET [97m/ [90mat [37mTue Jan 29 2019 15:29:55 GMT+0300, [90mUser Agent: node-superagent/3.8.3[0m
+[95mResponse Body:[0m
+[97m/api/posts[0m
+[96mResponse: [32m200 [37m14.850 ms - 12[0m

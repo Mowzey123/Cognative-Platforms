@@ -54,3 +54,4 @@ class Server {
 }
 const server = new Server();
 server.start();
+exports.default = server.app;
