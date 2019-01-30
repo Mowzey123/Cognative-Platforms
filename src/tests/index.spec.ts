@@ -6,7 +6,7 @@ import 'mocha';
 chai.use(chaiHttp);
 const expect = chai.expect;
 
-describe('Hello API Request', () => {
+describe('defualt Server Route', () => {
   it('should return response on call', async () => {
     const res = await chai.request(server).get('/');
     expect(res.text).to.eql("/api/posts");

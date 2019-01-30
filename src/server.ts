@@ -4,7 +4,7 @@ import compression from 'compression';
 import cors from 'cors';
 import * as config from './config/config';
 import bodyParser from 'body-parser';
-import {Logger} from './lib/logger';
+import {morganLogger} from './lib/morgan.logger';
 // Routes
 import indexRoutes from './routes/indexRoutes';
 import UserRoutes from './routes/UserRoutes';
@@ -13,8 +13,6 @@ import streamingRoutes from './routes/streamingRoutes';
 
 class Server {
     public app: express.Application;
-    bodyconfig: object = {};
-    logger: Logger;
 
     constructor() {
         this.app = express();
@@ -31,7 +29,7 @@ class Server {
         this.app.use(helmet());
         this.app.use(compression());
         this.app.use(cors());
-        this.logger=new Logger(this.app);
+        new morganLogger(this.app);
         
     }
 

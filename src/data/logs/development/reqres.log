@@ -72,3 +72,87 @@
 [95mResponse Body:[0m
 [97m/api/posts[0m
 [96mResponse: [32m200 [37m14.850 ms - 12[0m
+[96mRequest: [93mGET [97m/ [90mat [37mWed Jan 30 2019 12:08:10 GMT+0300, [90mUser Agent: PostmanRuntime/7.6.0[0m
+[95mRequest Body:[0m
+[97m{[0m
+[97m	"name": "Mowzey",[0m
+[97m	"username": "Mowzey",[0m
+[97m	"email": "molutal@gmail.com",[0m
+[97m	"password": "12324"[0m
+[97m}[0m
+[96mResponse: [31m500 [37m7.003 ms - -[0m
+[96mRequest: [93mGET [97m/ [90mat [37mWed Jan 30 2019 12:13:05 GMT+0300, [90mUser Agent: PostmanRuntime/7.6.0[0m
+[95mRequest Body:[0m
+[97m{[0m
+[97m	"name": "Mowzey",[0m
+[97m	"username": "Mowzey",[0m
+[97m	"email": "molutal@gmail.com",[0m
+[97m	"password": "12324"[0m
+[97m}[0m
+[95mResponse Body:[0m
+[97m/api/posts[0m
+[96mResponse: [32m200 [37m258.446 ms - 12[0m
+[96mRequest: [93mGET [97m/ [90mat [37mWed Jan 30 2019 12:27:03 GMT+0300, [90mUser Agent: PostmanRuntime/7.6.0[0m
+[95mRequest Body:[0m
+[97m{[0m
+[97m	"name": "Mowzey",[0m
+[97m	"username": "Mowzey",[0m
+[97m	"email": "molutal@gmail.com",[0m
+[97m	"password": "12324"[0m
+[97m}[0m
+[96mResponse: [31m500 [37m11.055 ms - -[0m
+[96mRequest: [93mGET [97m/ [90mat [37mWed Jan 30 2019 12:27:35 GMT+0300, [90mUser Agent: PostmanRuntime/7.6.0[0m
+[95mRequest Body:[0m
+[97m{[0m
+[97m	"name": "Mowzey",[0m
+[97m	"username": "Mowzey",[0m
+[97m	"email": "molutal@gmail.com",[0m
+[97m	"password": "12324"[0m
+[97m}[0m
+[95mResponse Body:[0m
+[97m/api/posts[0m
+[96mResponse: [32m200 [37m227.407 ms - 12[0m
+[96mRequest: [93mGET [97m/ [90mat [37mWed Jan 30 2019 12:29:58 GMT+0300, [90mUser Agent: PostmanRuntime/7.6.0[0m
+[95mRequest Body:[0m
+[97m{[0m
+[97m	"name": "Mowzey",[0m
+[97m	"username": "Mowzey",[0m
+[97m	"email": "molutal@gmail.com",[0m
+[97m	"password": "12324"[0m
+[97m}[0m
+[95mResponse Body:[0m
+[97m/api/posts[0m
+[96mResponse: [32m200 [37m92.331 ms - 12[0m
+[96mRequest: [93mGET [97m/ [90mat [37mWed Jan 30 2019 12:34:43 GMT+0300, [90mUser Agent: PostmanRuntime/7.6.0[0m
+[95mRequest Body:[0m
+[97m{[0m
+[97m	"name": "Mowzey",[0m
+[97m	"username": "Mowzey",[0m
+[97m	"email": "molutal@gmail.com",[0m
+[97m	"password": "12324"[0m
+[97m}[0m
+[95mResponse Body:[0m
+[97m/api/posts[0m
+[96mResponse: [32m200 [37m167.215 ms - 12[0m
+[96mRequest: [93mGET [97m/ [90mat [37mWed Jan 30 2019 12:36:10 GMT+0300, [90mUser Agent: PostmanRuntime/7.6.0[0m
+[95mRequest Body:[0m
+[97m{[0m
+[97m	"name": "Mowzey",[0m
+[97m	"username": "Mowzey",[0m
+[97m	"email": "molutal@gmail.com",[0m
+[97m	"password": "12324"[0m
+[97m}[0m
+[95mResponse Body:[0m
+[97m/api/posts[0m
+[96mResponse: [32m200 [37m612.364 ms - 12[0m
+[96mRequest: [93mGET [97m/ [90mat [37mWed Jan 30 2019 12:36:24 GMT+0300, [90mUser Agent: PostmanRuntime/7.6.0[0m
+[95mRequest Body:[0m
+[97m{[0m
+[97m	"name": "Mowzey",[0m
+[97m	"username": "Mowzey",[0m
+[97m	"email": "molutal@gmail.com",[0m
+[97m	"password": "12324"[0m
+[97m}[0m
+[95mResponse Body:[0m
+[97m/api/posts[0m
+[96mResponse: [32m200 [37m4.882 ms - 12[0m
