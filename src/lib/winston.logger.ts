@@ -1,14 +1,15 @@
-import path from 'path';
-import fs from 'fs';
+import path = require('path');
+import fs = require('fs');
 import { createLogger, format, transports } from 'winston';
 import {LOG_LEVEL} from '../config/config';
+import dataobj from './data';
 
 class winstonLogger{
     logDirectory = '';
     currDateTime : Date;
     constructor(){
         this.logDirectory = path.join(__dirname,'../', process.env.LOG_DIR);
-        fs.existsSync(this.logDirectory) || fs.mkdirSync(this.logDirectory);
+        fs.existsSync(this.logDirectory) || dataobj.makeDir(this.logDirectory);
     }
 
 
@@ -19,6 +20,7 @@ class winstonLogger{
             level: LOG_LEVEL === 'development' ? 'debug' : 'info',
             format: format.combine(
                 format.timestamp({
+
                   format: 'YYYY-MM-DD HH:mm:ss'
                 }),
                 format.printf(info => `${info.timestamp} ${info.level}: ${info.message}`),

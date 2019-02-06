@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose = require('mongoose');
 
  const MONGO_URI = 'mongodb://localhost/restapits';
  mongoose.set('useFindAndModify', false);

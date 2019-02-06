@@ -1,7 +1,7 @@
-import fs from 'fs';
-import path from 'path';
-import morgan from 'morgan';
-import morganBody from 'morgan-body';
+import fs = require('fs');
+import path = require('path');
+import morgan = require('morgan');
+import morganBody = require('morgan-body');
 import { createLogger, format, transports } from 'winston';
 import {LOG_LEVEL} from '../config/config';
 

@@ -1,4 +1,4 @@
-import server from '../server';
+import server from '../index';
 import chai from 'chai';
 import chaiHttp = require('chai-http');
 import 'mocha';

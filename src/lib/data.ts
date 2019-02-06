@@ -1,14 +1,15 @@
 import fs = require('fs');
 import path = require('path');
-
+import mkdirp = require('mkdirp');
+    
 export class Data{
       public basedir = path.join(__dirname,'../data/');//define base data dir
       constructor(){}
 
-      create(dir: string,file: string,data: object,ext: string){
+      create(dir: string,file: string,data: object){
             //open file for writing
             try {
-                  fs.open(this.basedir+dir+'/'+file+'.json','wx',function(err,fileDescriptor){
+                  fs.open(this.basedir+dir+'/'+file,'wx',function(err,fileDescriptor){
                         if(!err && fileDescriptor){
                               fs.writeFile(fileDescriptor,JSON.stringify(data),function(err){
                                     if(!err){
@@ -70,4 +71,14 @@ export class Data{
                   console.log(error);
             }
       }
+
+      makeDir(dir){
+            mkdirp(dir, function (err) {
+                  if (err) console.error(err)
+                  else console.log('pow!')
+            });
+      }
 }
+
+const dataobj = new Data();
+export default dataobj;

@@ -1,6 +1,7 @@
 import * as dotenv from "dotenv";
-import fs from 'fs';
-import path from 'path';
+const fs = require('fs');
+const path =require('path');
+import dataobj from '../lib/data';
 
 dotenv.config();
 let workingpath: string;
@@ -17,10 +18,10 @@ switch (process.env.NODE_ENV) {
 }
 
 dotenv.config({ path: workingpath });
-
  // ensure log directory exists
  var logDirectory = path.join(__dirname,'../', process.env.LOG_DIR);
- fs.existsSync(logDirectory) || fs.mkdirSync(logDirectory);
+ fs.existsSync(logDirectory) || dataobj.makeDir(logDirectory);
+
 
 
 export const APP_ID = process.env.APP_ID;

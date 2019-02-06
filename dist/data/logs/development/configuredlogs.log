@@ -1,0 +1,4 @@
+{"message":{"msg":"execution at index.routes/getIndex(req, res)"},"level":"info","timestamp":"2019-01-30 12:36:10"}
+{"message":{"msg":"execution complete index.routes/getIndex(req, res)"},"level":"info","timestamp":"2019-01-30 12:36:10"}
+{"message":{"msg":"execution at index.routes/getIndex(req, res)"},"level":"info","timestamp":"2019-01-30 12:36:24"}
+{"message":{"msg":"execution complete index.routes/getIndex(req, res)"},"level":"info","timestamp":"2019-01-30 12:36:24"}
