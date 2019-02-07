@@ -2,17 +2,15 @@
   "name": "cognative",
   "version": "1.0.0",
   "description": "",
-  "main": "index",
+  "main": "dist/index.js",
   "scripts": {
     "clean": "rm -rf build",
     "ts": "tsc -w",
-    "start": "ts-node-dev ./src/index.ts",
+    "start": "node ./dist/index.js",
     "setup": "npm install",
-    "build": "gulp serve",
+    "build":"gulp serve",
     "build-watch": "tsc --watch",
-    "test": "mocha -r ts-node/register ./src/tests/*.spec.ts",
-    "typedoc": "typedoc --out ./docs --mode modules --tsconfig ./tsconfig.json ./src",
-    "posttypedoc": "shx cp .nojekyll docs/.nojekyll"
+    "test": "mocha -r ts-node/register ./src/tests/*.spec.ts"
   },
   "keywords": [],
   "repository": {
@@ -65,7 +63,6 @@
     "gulp-typescript": "^5.0.0",
     "gulp-use-tsconfig": "^1.2.2",
     "helmet": "^3.15.0",
-    "kafka-typescript": "0.0.2",
     "mkdirp": "^0.5.1",
     "mocha": "^5.2.0",
     "mongoose": "^5.4.4",

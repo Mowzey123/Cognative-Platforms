@@ -27,10 +27,6 @@ var morgan_logger_1 = require("./lib/morgan.logger"); // Routes
 
 var indexRoutes_1 = require("./routes/indexRoutes");
 
-var UserRoutes_1 = require("./routes/UserRoutes");
-
-var streamingRoutes_1 = require("./routes/streamingRoutes");
-
 var Server =
 /*#__PURE__*/
 function () {
@@ -63,8 +59,6 @@ function () {
     value: function routes() {
       //adding imported routes to middleware
       this.app.use('/', indexRoutes_1.default);
-      this.app.use('/users', UserRoutes_1.default);
-      this.app.use('/kafka', streamingRoutes_1.default);
     } //start running server on port
 
   }, {

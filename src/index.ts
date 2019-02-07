@@ -7,8 +7,7 @@ import bodyParser = require('body-parser');
 import {morganLogger} from './lib/morgan.logger';
 // Routes
 import indexRoutes from './routes/indexRoutes';
-import UserRoutes from './routes/UserRoutes';
-import streamingRoutes from './routes/streamingRoutes';
+
 
 
 class Server {
@@ -36,8 +35,7 @@ class Server {
     public routes(): void {
     //adding imported routes to middleware
         this.app.use('/', indexRoutes);
-        this.app.use('/users', UserRoutes);
-        this.app.use('/kafka', streamingRoutes);
+        
     }
 
     //start running server on port
