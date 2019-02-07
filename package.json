@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rm -rf build",
     "ts": "tsc -w",
-    "start": "ts-node-dev ./src/index.ts",
+    "start": "nodemon ./dist/index.js",
     "setup": "npm install",
     "build": "gulp serve",
     "build-watch": "tsc --watch",
