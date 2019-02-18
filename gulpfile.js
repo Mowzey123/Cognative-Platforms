@@ -37,7 +37,7 @@ gulp.task('creating-log-dirs',function(){
           .pipe(gulp.dest('dist'));
 });
 
-gulp.task('serve',gulp.series(['build']),function(){
+gulp.task('serve',['build','lint'],function(){
   const options ={
       script:'dist/index.js',
       delayTime:1,
